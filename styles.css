@@ -1,0 +1,179 @@
+/* Importing the fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lobster|Oxygen|Roboto:400,500,700&display=swap');
+
+/* Basic body styling */
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Universal styles for the entire site */
+::selection {
+    background: rgba(255, 20, 20, 0.3);
+    color: #fff;
+}
+/* Styling the main header of the page */
+header {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position-x: center;
+    transition: all 0.3s ease;
+}
+header#main {
+    background-image: url('images/header.jpg');
+    position: fixed;
+    top: 0;
+}
+header#main div.name {
+    position: relative;
+    top: 45vh;
+    text-align: center;
+    font-size: 45pt;
+    font-family: 'Lobster', 'Oxygen', Helvetica, Arial, sans-serif;
+    color: #333;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: all 1s ease;
+}
+header#main div.motto {
+    position: relative;
+    top: 45vh;
+    text-align: center;
+    color: #333;
+    font-family: 'Oxygen', 'Roboto', Helvetica, Arial, serif;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 14pt;
+    transition: all 1s ease;
+}
+header#main.left div {
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+header#main button {
+    position: relative;
+    top: 60vh;
+    height: 75px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid #444;
+    color: #fff;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+    font-size: 15pt;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    left: calc(50vw - 100px);
+    width: 200px;
+    overflow: hidden;
+    animation: text 2s ease infinite;
+}
+@keyframes text {
+    0% {
+        text-indent: 0px;
+    }
+    14% {
+        text-indent: -10px;
+    }
+    50% {
+        text-indent: 30px;
+    }
+}
+
+/* SECOND SLIDE STYLES */
+header {
+    position: fixed;
+    transition: all 0.3s ease;
+}
+header#second {
+    background: url('images/header2.jpg');
+    background-size: cover;
+}
+
+/* THIRD SLIDE STYLE */
+header#third {
+    background: url('images/header4.jpg');
+    background-position: center;
+}
+header#fourth {
+    background: url('images/header3.jpg');
+}
+
+/* UNIVERSAL HEADER STYLES */
+header.display {
+    left: 0;
+    transition: all 0.75s ease;
+}
+header.left {
+    left: -25vw;
+    transition: all 1s ease;
+}
+header.right {
+    left: 125vw;
+    transition: all 1.3s ease;
+}
+header div.text-wrapper {
+    position: relative;
+    left: 2vw;
+    width: 20vw;
+    background: #00000033;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+    top: 30vh;
+    transition: all 0.3s ease;
+}
+header div.header-title {
+    font-size: 28pt;
+    font-family: 'Lobster', 'Roboto', Helvetica, serif;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 16px 10px;
+}
+header div.description {
+    font-size: 12pt;
+    font-family: 'Roboto', 'Oxygen', Helvetica, sans-serif;
+    font-weight: 500;
+    color: #eee;
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    padding: 25px 16px;
+    background: rgba(0, 0, 0, 0.3);
+}
+header div.links {
+    background: rgba(0, 0, 0, 0.3);
+}
+header div.links a {
+    color: #fff;
+    text-decoration: none;
+    height: 25px;
+    width: fit-content;
+    display: inline-block;
+    border: 1px solid #fff;
+    line-height: 25px;
+    padding: 4px 20px;
+    margin: 5px 10px;
+}
+header div.links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+header.right div.text-wrapper {
+    opacity: 0;
+    left: 40vw!important;
+    transition: all 2s ease;
+}
+header.display div.text-wrapper {
+    opacity: 1;
+    left: 3vw;
+    transition: all 1s ease;
+}
+header.left div.text-wrapper {
+    opacity: 0;
+    left: -5vw;
+    transition: all 0.3s ease;
+}
+header.left button {
+    opacity: 0;
+}
