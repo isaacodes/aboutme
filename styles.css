@@ -5,8 +5,9 @@
 body, html {
     width: 100%;
     height: 100%;
-    overflow: hidden;
     margin: 0;
+    overflow: hidden;
+    /* overflow-y: hidden; */
 }
 
 /* Universal styles for the entire site */
@@ -71,6 +72,7 @@ header#main button {
     width: 200px;
     overflow: hidden;
     animation: text 2s ease infinite;
+    backdrop-filter: blur(5px);
 }
 @keyframes text {
     0% {
@@ -88,6 +90,13 @@ header#main button {
 header {
     position: fixed;
     transition: all 0.3s ease;
+    z-index: 2;
+}
+header#page-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 header#second {
     background: url('images/header2.jpg');
@@ -97,30 +106,50 @@ header#second {
 /* THIRD SLIDE STYLE */
 header#third {
     background: url('images/header4.jpg');
-    background-position: center;
+    background-position-y: center;
 }
 header#fourth {
     background: url('images/header3.jpg');
+    background-position: center;
 }
-
+div#last {
+    background: #333;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    overflow: auto;
+}
+div.content-header {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: url('images/header5.jpg');
+    background-position: center;
+    /* background-attachment: fixed; */
+}
 /* UNIVERSAL HEADER STYLES */
-header.display {
+.display {
     left: 0;
     transition: all 0.75s ease;
 }
-header.left {
+.left {
     left: -25vw;
     transition: all 1s ease;
 }
-header.right {
+.right {
     left: 125vw;
     transition: all 1.3s ease;
 }
-header div.text-wrapper {
+.full-left {
+    left: -100vw;
+}
+ div.text-wrapper {
     position: relative;
     left: 2vw;
     width: 20vw;
-    background: #00000033;
+    background-color: #44444433;
+    backdrop-filter: blur(5px);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
     top: 30vh;
     transition: all 0.3s ease;
@@ -176,4 +205,120 @@ header.left div.text-wrapper {
 }
 header.left button {
     opacity: 0;
+}
+article {
+    width: calc(75vw - 32px);
+    float: left;
+    padding: 16px;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+}
+aside {
+    width: calc(24vw - 32px);
+    text-align: left;
+    padding: 16px;
+    position: absolute;
+    right: 0;
+    top: 100vh;
+    float: right;
+}
+.final {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+/* MAIN HEADER AND PAGE STYLES */
+header#page-header {
+    height: 100vh;
+    width: 100vw;
+    background: url('images/mainheader.jpg');
+    background-attachment: fixed;
+}
+header h1 {
+    position: absolute;
+    font-family: 'Lobster', 'Oxygen', Helvetica, sans-serif;
+    font-size: 50px;
+    left: 50vw;
+    height: 10vh;
+    line-height: 10vh;
+    width: 20vw;
+    text-align: center;
+    background: #33333399;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: 5px solid #fff;
+}
+span.resume-education-header {
+    font-family: 'Lobster', 'Roboto', Helvetica, sans-serif;
+    font-size: 18pt;
+    background: #2c67e355;
+    padding: 8px;
+    border-left: 5px solid #2c67e3;
+}
+.final a {
+    color: #2c67e3;
+    border: 1px solid #fff;
+    text-decoration: none;
+}
+.final a:hover {
+    border: 1px solid #2c67e3;
+}
+nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 44;
+    right: 2vw;
+}
+nav button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #33333399;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    margin: 5vh 0px;
+    display: block;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    z-index: 40!important;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition:  background 0.7s ease;
+}
+nav button.fill {
+    background: #33333399;
+}
+nav .bar {
+    /* height: 53px; */
+    height: 0px;
+    width: 2px;
+    position: absolute;
+    background: #333;
+    transition: height 0.7s ease;
+    right: 9px;
+}
+nav .bar.one {
+    top: calc(5vh + 20px);
+}
+nav .bar.y {
+    height: 5vh;
+}
+nav .bar.two {
+    top: calc((5vh + 20px) * 2)
+}
+nav .bar.three {
+    top: calc((5vh + 20px) * 3)
+}
+nav .bar.four {
+    top: calc((5vh + 20px) * 4)
 }
